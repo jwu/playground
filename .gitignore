@@ -1,0 +1,40 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# C / native build outputs
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Zig build caches and outputs
+.zig-cache/
+zig-pkg/
+target/
+
+# Tooling
+compile_commands.json
+.cache/
+
+# Optional local env files
+.env
+.env.*

@@ -1,0 +1,23 @@
+.{
+  .name = .raylib_playground,
+  .version = "0.0.1",
+  .minimum_zig_version = "0.16.0",
+  .fingerprint = 0xa1938b25ad98b93c,
+
+  .dependencies = .{
+    .raylib = .{
+      .url = "https://github.com/raysan5/raylib/archive/refs/tags/6.0.tar.gz",
+      .hash = "raylib-6.0.0-whq8uCSwLgWWeF3ec3dbG6Rr36SLFL-s2WJ1Q_2E22Bb",
+    },
+    .cglm = .{
+      .url = "https://github.com/recp/cglm/archive/refs/tags/v0.9.6.tar.gz",
+      .hash = "N-V-__8AAGApJACv6OGRSLZEdwbH9P68sV3B96LAZsZ21_4C",
+    },
+    .raygui = .{
+      .url = "https://github.com/raysan5/raygui/archive/refs/tags/4.0.tar.gz",
+      .hash = "N-V-__8AAODRSAC2Tq6vVWCbMVK2TRCOpzmByWieeDvdxoyA",
+    },
+  },
+
+  .paths = .{ "" },
+}
