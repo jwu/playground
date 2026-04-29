@@ -2,19 +2,28 @@
 
 ## Project
 
-这是一个用于收集、构建和测试 raylib C examples 的小型 playground。
+这是一个用于收集、构建和测试 Gameplay 开发里各种小技巧的小型 playground。
 
 - 构建系统：Zig `0.16.0`
-- 包管理：`build.zig.zon`，使用 Zig dependency 管理第三方依赖
-- 示例语言：C，由 Zig build 编译为多个可执行程序
+- 示例语言：C
+- 图形库：raylib `6.0`
+- 依赖管理：`build.zig.zon`
 - raylib：GitHub `raysan5/raylib` tag `6.0`
 
 核心约束：不要把项目改成 CMake；不要手动 vendor 第三方源码或预编译二进制；raylib 应始终由 Zig dependency 管理。
 
-## Key structure
+## Project layout
+
+```text
+.
+├── assets/            # 示例运行时需要的资源
+├── src/bin/           # raylib C examples，每个文件对应一个可执行程序
+├── target/bin/        # 构建输出
+├── build.zig          # 构建逻辑
+└── build.zig.zon      # 项目元信息与依赖声明
+```
 
 - `build.zig`：扫描 `src/bin/*.c`，每个 C 文件生成一个同名 executable，并链接 Zig 管理的 raylib。
-- `build.zig.zon`：项目元信息与依赖声明。
 - `src/bin/`：平铺存放 C examples，例如 `core_basic_window.c`。
 - `assets/`：平铺存放 example 实际需要的资源；C 代码中资源路径统一写 `assets/<filename>`。
 - `target/bin/`：构建输出目录。
@@ -50,12 +59,12 @@ zig build examples -Dplatform=glfw
 zig build examples
 ```
 
-## Add an example
+## Add a new example
 
-1. 将 C 文件放到 `src/bin/`。
-2. 将必要资源放到 `assets/`。
-3. 将源码中的 `resources/foo.ext` 改为 `assets/foo.ext`。
-4. 运行 `zig build examples` 验证。
+1. 新建 `src/bin/<example_name>.c`
+2. 如果需要资源，把少量必要文件放到 `assets/`
+3. 将源码中的资源路径写成 `assets/<filename>`
+4. 验证构建：`zig build examples`
 
 ## Safety
 

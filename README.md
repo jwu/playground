@@ -1,6 +1,6 @@
-# raylib playground
+# GameDev Playground
 
-一个用于收集、构建和测试 raylib C examples 的小型 playground。
+一个用于收集、构建和测试 Gameplay 开发里各种小技巧的小型 playground。
 
 - 构建系统：Zig `0.16.0`
 - 示例语言：C
